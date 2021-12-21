@@ -18,11 +18,6 @@ public class MusicPlayer extends JWindow implements ActionListener {
     JButton addButton = new JButton("Add Music");
     JButton playButton = new JButton("Play");
     JButton stopButton = new JButton("Stop");
-    /*
-    JMenuItem addM = new JMenuItem("Add Music");
-    JMenuItem playM = new JMenuItem("Play");
-    JMenuItem stopM = new JMenuItem("Stop");
-    */
     Font font = new Font("",Font.BOLD,20);
     JComboBox list = new JComboBox();
     JFileChooser browser = new JFileChooser();
@@ -41,22 +36,10 @@ public class MusicPlayer extends JWindow implements ActionListener {
 
 
     MusicPlayer() {
-        // window.add(this);
 
         addButton.addActionListener(this);
         playButton.addActionListener(this);
         stopButton.addActionListener(this);
-
-        /*
-        JMenuBar menuBar = new JMenuBar();
-        JMenu menu = new JMenu("File");
-        menu.getAccessibleContext().setAccessibleDescription("General operations");
-        menu.add(addM);
-        menu.add(playM);
-        menu.add(stopM);
-        menuBar.add(menu);
-        window.setJMenuBar(menuBar);
-        */
 
         window.setFont(font);
 
@@ -77,6 +60,10 @@ public class MusicPlayer extends JWindow implements ActionListener {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
         window.setResizable(false);
+        java.net.URL url = ClassLoader.getSystemResource("com/kingofpugs/musicplayer/icon.png");
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Image img = kit.createImage(url);
+        window.setIconImage(img);
     }
 
     @Override
